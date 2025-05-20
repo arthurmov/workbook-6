@@ -28,7 +28,7 @@ public class Program {
 
         System.out.println("Search for a name (first or last)");
         String name = scanner.nextLine().trim().toLowerCase();
-
+        
         System.out.println("\nFound Match:");
         boolean found = false;
         for (Person p : people) {
