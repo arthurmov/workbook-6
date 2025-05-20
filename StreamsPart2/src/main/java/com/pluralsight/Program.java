@@ -49,14 +49,14 @@ public class Program {
                 .reduce(0, Integer::sum);
 
         double averageAge = totalAge / (double) people.size();
-        System.out.printf("Average age: %.2f%n", averageAge);
+        System.out.printf("\nAverage age: %.2f%n", averageAge);
 
         Optional<Person> oldest = people.stream().max(Comparator.comparingInt(Person::getAge));
 
         Optional<Person> youngest = people.stream().min(Comparator.comparingInt(Person::getAge));
 
         System.out.println("Oldest age: " + (oldest.map(Person::getAge).orElse(-1)));
-        System.out.println("Youngest age: " + (youngest.map(Person::getAge).orElse(-1)));
+        System.out.println("Youngest age: " + (youngest.map(Person::getAge).orElse(-1)) + "\n");
 
 //        int totalAge = 0;
 //        int maxAge = Integer.MIN_VALUE;
