@@ -1,5 +1,6 @@
 package com.pluralsight.collection;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FixedList<T> {
@@ -8,13 +9,18 @@ public class FixedList<T> {
 
     public FixedList(int maxSize) {
         this.maxSize = maxSize;
+        this.items = new ArrayList<>();
     }
 
-    public void add(List<T> item) {
-
+    public void add(T item) {
+        if (items.size() >= maxSize) {
+            System.out.println("Reached max capacity");
+            return;
+        }
+        items.add(item);
     }
 
     public List<T> getItems() {
-        return items;
+        return new ArrayList<>(items);
     }
 }
